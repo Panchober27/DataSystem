@@ -20,6 +20,8 @@ import javax.swing.WindowConstants;
 public class Creatividad extends javax.swing.JFrame {
 
     String user;
+    String nombre_usuario;
+    
 
     /**
      * Creates new form Creatividad
@@ -45,7 +47,21 @@ public class Creatividad extends javax.swing.JFrame {
         jLabel_Wallpaper.setIcon(icono);
         this.repaint();
         
-        
+        //Codigo para entrar a la base de datos.
+        try{
+            Connection cn = Conexion.conectar();
+            PreparedStatement pst = cn.prepareStatement(""
+                    + "select nombre_usuario from usuarios where username = '" + user + "'"); // ARREGLAR ESTA LINEAAA
+            ResultSet rs = pst.executeQuery(); //metodo para obtener el resultado de las instrucciones a la bd.
+            
+            if(rs.next()){
+                nombre_usuario = rs.getString("nombre_usuario");
+                jLabel_NombreUsuario.setText(nombre_usuario);
+            }
+        } catch (SQLException e){
+            System.err.println("ERROR!!! error desde la interfaz de creatividad");
+            
+        }
         
         
 
@@ -68,6 +84,7 @@ public class Creatividad extends javax.swing.JFrame {
 
         jLabel_titulo_pag = new javax.swing.JLabel();
         txt_nombre = new javax.swing.JTextField();
+        jLabel_NombreUsuario = new javax.swing.JLabel();
         jLabel_Wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,11 +94,16 @@ public class Creatividad extends javax.swing.JFrame {
         jLabel_titulo_pag.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel_titulo_pag.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_titulo_pag.setText("Interfaz de Creatividad");
-        getContentPane().add(jLabel_titulo_pag, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 500, -1));
+        getContentPane().add(jLabel_titulo_pag, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 260, -1));
 
         txt_nombre.setBackground(new java.awt.Color(153, 153, 255));
         txt_nombre.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 210, -1));
+        getContentPane().add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 210, -1));
+
+        jLabel_NombreUsuario.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel_NombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_NombreUsuario.setText("jLabel1");
+        getContentPane().add(jLabel_NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
         getContentPane().add(jLabel_Wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 470));
 
         pack();
@@ -123,6 +145,7 @@ public class Creatividad extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel_NombreUsuario;
     private javax.swing.JLabel jLabel_Wallpaper;
     private javax.swing.JLabel jLabel_titulo_pag;
     private javax.swing.JTextField txt_nombre;

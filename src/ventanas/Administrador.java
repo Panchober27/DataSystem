@@ -166,7 +166,7 @@ public class Administrador extends javax.swing.JFrame {
 
         jLabel_Footer.setText("Creado por Francisco Berwart");
         getContentPane().add(jLabel_Footer, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
-        getContentPane().add(jLabel_Wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 650, 430));
+        getContentPane().add(jLabel_Wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
