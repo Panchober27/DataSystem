@@ -12,7 +12,7 @@ import java.awt.Toolkit;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import static ventanas.Login.user;
+import static ventanas.Login.user;  // PORQUE???????
 
 
 /**
@@ -33,7 +33,7 @@ public class Capturista extends javax.swing.JFrame {
         
         user = Login.user;
         
-        this.setSize(600, 430);
+        this.setSize(550, 300);
         this.setTitle("Interfaz de Capturista / usuario: " + user);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -87,6 +87,13 @@ public class Capturista extends javax.swing.JFrame {
 
         jLabel_tituloPag = new javax.swing.JLabel();
         jLabel_NombreUsuario = new javax.swing.JLabel();
+        jButton_CRegistrarCliente = new javax.swing.JButton();
+        jButton_GestionarClientes = new javax.swing.JButton();
+        jButton_Imprimir = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel_Footer = new javax.swing.JLabel();
         jLabel_Wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,11 +108,65 @@ public class Capturista extends javax.swing.JFrame {
         jLabel_NombreUsuario.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel_NombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_NombreUsuario.setText("jLabel1");
-        getContentPane().add(jLabel_NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
-        getContentPane().add(jLabel_Wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 470));
+        getContentPane().add(jLabel_NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jButton_CRegistrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
+        jButton_CRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_CRegistrarClienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton_CRegistrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 120, 100));
+
+        jButton_GestionarClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/informationuser.png"))); // NOI18N
+        jButton_GestionarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_GestionarClientesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton_GestionarClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 120, 100));
+
+        jButton_Imprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/impresora.png"))); // NOI18N
+        jButton_Imprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ImprimirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton_Imprimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 120, 100));
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Registrar cliente");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
+
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Gestionar clientes");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Imprimir clientes");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, -1, -1));
+
+        jLabel_Footer.setText("Creado por Francisco Berwart");
+        getContentPane().add(jLabel_Footer, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, -1, -1));
+        getContentPane().add(jLabel_Wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton_CRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CRegistrarClienteActionPerformed
+        Creatividad creatividad = new Creatividad();
+        creatividad.setVisible(true);
+    }//GEN-LAST:event_jButton_CRegistrarClienteActionPerformed
+
+    private void jButton_GestionarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_GestionarClientesActionPerformed
+        Creatividad creatividad = new Creatividad();
+        creatividad.setVisible(true);
+    }//GEN-LAST:event_jButton_GestionarClientesActionPerformed
+
+    private void jButton_ImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ImprimirActionPerformed
+        Creatividad creatividad = new Creatividad();
+        creatividad.setVisible(true);
+    }//GEN-LAST:event_jButton_ImprimirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,6 +204,13 @@ public class Capturista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton_CRegistrarCliente;
+    private javax.swing.JButton jButton_GestionarClientes;
+    private javax.swing.JButton jButton_Imprimir;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel_Footer;
     private javax.swing.JLabel jLabel_NombreUsuario;
     private javax.swing.JLabel jLabel_Wallpaper;
     private javax.swing.JLabel jLabel_tituloPag;

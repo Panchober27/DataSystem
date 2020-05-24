@@ -128,19 +128,50 @@ public class RestaurarPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_passwordConfirmacionActionPerformed
 
     private void jButton_RestaurarPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_RestaurarPasswordActionPerformed
-
-        if(!txt_password.equals("") && !txt_passwordConfirmacion.equals("")){
-            // Codigo para cambio de pass
+        String password, confirmacion_password;
+        
+        password = txt_password.getText().trim();
+        confirmacion_password = txt_passwordConfirmacion.getText().trim();
+        
+        if (!password.equals("") && !confirmacion_password.equals("")){
+            //Codigo correcto
+            
+            if(password.equals(confirmacion_password)){
+                try{
+                    Connection cn = Conexion.conectar();
+                    PreparedStatement pst = cn.prepareStatement(
+                        "update usuarios set password=? where username = '" + user_update +"'");
+                    
+                    pst.setString(1, password);
+                    
+                    pst.executeUpdate(); // AQUI VOYYY!!!!!
+                    cn.close();
+                    txt_password.setBackground(Color.GREEN);
+                    txt_passwordConfirmacion.setBackground(Color.GREEN);
+                    
+                    JOptionPane.showMessageDialog(null, "Restauracion exitosa!");
+                    
+                } catch (SQLException e){
+                    System.out.println("Error en restaurar password " + e);
+                }
+                
+                
+                
+            } else {
+                txt_passwordConfirmacion.setBackground(Color.red);
+                JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
+            }
+            
+            
         } else {
-            JOptionPane.showMessageDialog(null, "Debes llenar todos los campos.");
             txt_password.setBackground(Color.red);
             txt_passwordConfirmacion.setBackground(Color.red);
-            
+            JOptionPane.showMessageDialog(null, "No se admiten contraseñas vacias");
         }
-
         
-
-
+        
+        
+        
     }//GEN-LAST:event_jButton_RestaurarPasswordActionPerformed
 
     /**
