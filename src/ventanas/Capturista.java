@@ -154,18 +154,15 @@ public class Capturista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_CRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CRegistrarClienteActionPerformed
-        Creatividad creatividad = new Creatividad();
-        creatividad.setVisible(true);
+        JOptionPane.showMessageDialog(null, "Se apreto el boton");
     }//GEN-LAST:event_jButton_CRegistrarClienteActionPerformed
 
     private void jButton_GestionarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_GestionarClientesActionPerformed
-        Creatividad creatividad = new Creatividad();
-        creatividad.setVisible(true);
+        
     }//GEN-LAST:event_jButton_GestionarClientesActionPerformed
 
     private void jButton_ImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ImprimirActionPerformed
-        Creatividad creatividad = new Creatividad();
-        creatividad.setVisible(true);
+        
     }//GEN-LAST:event_jButton_ImprimirActionPerformed
 
     /**

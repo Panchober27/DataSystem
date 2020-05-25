@@ -66,7 +66,8 @@ public class Creatividad extends javax.swing.JFrame {
         
 
     }
-
+    
+    //Metodo que da imagen de tope algo asi como el Favicon en JS
     @Override
     public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("images/icon.png"));
@@ -83,7 +84,6 @@ public class Creatividad extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel_titulo_pag = new javax.swing.JLabel();
-        txt_nombre = new javax.swing.JTextField();
         jLabel_NombreUsuario = new javax.swing.JLabel();
         jLabel_Wallpaper = new javax.swing.JLabel();
 
@@ -95,10 +95,6 @@ public class Creatividad extends javax.swing.JFrame {
         jLabel_titulo_pag.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_titulo_pag.setText("Interfaz de Creatividad");
         getContentPane().add(jLabel_titulo_pag, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 260, -1));
-
-        txt_nombre.setBackground(new java.awt.Color(153, 153, 255));
-        txt_nombre.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 210, -1));
 
         jLabel_NombreUsuario.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel_NombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,6 +144,5 @@ public class Creatividad extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_NombreUsuario;
     private javax.swing.JLabel jLabel_Wallpaper;
     private javax.swing.JLabel jLabel_titulo_pag;
-    private javax.swing.JTextField txt_nombre;
     // End of variables declaration//GEN-END:variables
 }
