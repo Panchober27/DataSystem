@@ -135,6 +135,11 @@ public class RegistrarUsuarios extends javax.swing.JFrame {
         getContentPane().add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 210, -1));
 
         cmb_niveles.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrador", "Capturista", "Tecnico" }));
+        cmb_niveles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_nivelesActionPerformed(evt);
+            }
+        });
         getContentPane().add(cmb_niveles, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
 
         jLabel_Footer.setText("Creado por Francisco Berwart");
@@ -277,6 +282,10 @@ public class RegistrarUsuarios extends javax.swing.JFrame {
     private void txt_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_passwordActionPerformed
+
+    private void cmb_nivelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_nivelesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_nivelesActionPerformed
 
     /**
      * @param args the command line arguments
